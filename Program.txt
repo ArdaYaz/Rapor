@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main()
+{
+    
+    struct student
+{
+   char full_name[30];
+   int what_year;
+   char the_problem[300];
+};
+
+int k;
+printf("Kac ogrenci:");
+scanf("%d", &k);
+system("clear");
+
+    struct student *ptr, students[k];
+    int n;
+    ptr=&students[0];
+
+    for (n=0;n<k;n++){
+    printf("isim: \n");
+    scanf("%s", (*(ptr+n)).full_name);
+    
+    printf("Kaçinci sinif: ");
+    scanf("%d", &(*(ptr+n)).what_year);
+    
+    printf("Okulda karsilastiginiz herhangi bir problemi yaziniz: \n");
+    scanf("%s", (*(ptr+n)).the_problem);
+    
+    system("clear");
+    };
+    
+    int i;
+    int answer;
+    int ogrenci = 0;
+    printf("Kod: \n");
+    scanf("%d", &answer);
+    
+    if (answer == 420 ){
+    for (i=0; i<k; i++){
+    printf("%d) %s\n", i, students[i].the_problem);
+        }
+    
+    printf("Hangi problemi incelemek istiyorsunuz?: ");
+    while (ogrenci <= k){
+        scanf("%d", &ogrenci);
+        printf("Ogrenci ismi: %s \nSinifi: %d \nSorunu: %s\n", students[ogrenci].full_name, students[ogrenci].what_year, students[ogrenci].the_problem);
+    }
+    };
+    
+}
